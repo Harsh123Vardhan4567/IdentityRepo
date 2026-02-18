@@ -31,25 +31,44 @@ namespace IdentityDemo.Services
 
         }
 
-        public async  Task SendRegistrationConfirmationEmailAsync(string toEmail, string firstName, string confirmationLink)
+        public async Task SendRegistrationConfirmationEmailAsync(string toEmail,string firstName,string confirmationLink)
         {
-            string filepath = Path.Combine(_env.ContentRootPath, "Templates", "RegistrationConfirmation");
-            string htmlcontent = await File.ReadAllTextAsync(filepath);
-            htmlcontent = htmlcontent.Replace("{{FirstName}}", firstName);
-            htmlcontent = htmlcontent.Replace("{{ConfirmationLink}}", confirmationLink);
-            htmlcontent = htmlcontent.Replace("{{Year}}", DateTime.UtcNow.Year.ToString());
+            try
+            {
+                string filepath = Path.Combine(
+                    _env.ContentRootPath,
+                    "Templates",
+                    "RegistrationConfirmation.html");  // ⚠ add extension
 
-            await SendEmailAsync(toEmail, "Email Confirmation", htmlcontent, true);
+                if (!File.Exists(filepath))
+                    throw new FileNotFoundException("Email template not found.", filepath);
 
+                string htmlcontent = await File.ReadAllTextAsync(filepath);
+
+                htmlcontent = htmlcontent.Replace("{{firstName}}", firstName);
+                htmlcontent = htmlcontent.Replace("{{confirmationLink}}", confirmationLink);
+                htmlcontent = htmlcontent.Replace("{{Year}}", DateTime.UtcNow.Year.ToString());
+
+                await SendEmailAsync(toEmail, "Email Confirmation", htmlcontent, true);
+            }
+            catch (Exception ex)
+            {
+                // Log the error properly
+                Console.WriteLine($"Email sending failed: {ex.Message}");
+
+                // Optional: rethrow if you want calling method to know
+                throw;
+            }
         }
+
 
         public async  Task SendResendConfirmationEmailAsync(string toEmail, string firstName, string confirmationLink)
         {
             string filepath = Path.Combine(_env.ContentRootPath, "Templates", "RegistrationConfirmation");
             string htmlcontent = await File.ReadAllTextAsync(filepath);
-            htmlcontent = htmlcontent.Replace("{{FirstName}}", firstName);
+            htmlcontent = htmlcontent.Replace("{{firstName}}", firstName);
             htmlcontent = htmlcontent.Replace("{{ConfirmationLink}}", confirmationLink);
-            htmlcontent = htmlcontent.Replace("{{Year}}", DateTime.UtcNow.Year.ToString());
+            htmlcontent = htmlcontent.Replace("{{DateTime}} ", DateTime.UtcNow.Year.ToString());
 
             await SendEmailAsync(toEmail, "Email Confirmation", htmlcontent, true);
         }

@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
-namespace ASPNETCoreIdentityDemo.ViewModels
+namespace IdentityDemo.ViewModel
 {
     public class RegisterViewModel
     {
@@ -20,6 +21,10 @@ namespace ASPNETCoreIdentityDemo.ViewModels
         [DataType(DataType.Date)]
         [Display(Name = "Date of Birth")]
         public DateTime? DateOfBirth { get; set; }
+        [Required(ErrorMessage = "Image is Required To Upload")]
+        public IFormFile? ProfileImagebase64 { get; set; }
+        [ValidateNever]
+        public string? Image { get; set; }
 
         [Required(ErrorMessage = "PhoneNumber is Required")]
         [Phone(ErrorMessage = "Please enter a valid Phone number")]

@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "D:\\Demo\\IdentityDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Demo\\IdentityDemo\\Migrations\\20260217062323_CustomIdentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260217062323_CustomIdentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\templates\\registrationconfirmation.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:templates\\registrationconfirmation.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\settings\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:settings\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\templates\\accountcreation.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:templates\\accountcreation.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\models\\applicationroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,18 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,33 +122,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20260217062323_CustomIdentity.cs",
-              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Migrations\\20260217062323_CustomIdentity.cs",
-              "RelativeDocumentMoniker": "Migrations\\20260217062323_CustomIdentity.cs",
-              "ToolTip": "D:\\Demo\\IdentityDemo\\Migrations\\20260217062323_CustomIdentity.cs",
-              "RelativeToolTip": "Migrations\\20260217062323_CustomIdentity.cs",
+              "DocumentIndex": 7,
+              "Title": "EmailSettings.cs",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Settings\\EmailSettings.cs",
+              "RelativeDocumentMoniker": "Settings\\EmailSettings.cs",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Settings\\EmailSettings.cs",
+              "RelativeToolTip": "Settings\\EmailSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T06:23:23.555Z",
+              "WhenOpened": "2026-02-18T09:42:11.613Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAkwEgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T09:30:33.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "Services\\AccountService.cs",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Services\\AccountService.cs",
+              "RelativeToolTip": "Services\\AccountService.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAmwHQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T09:30:33.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountCreation.html",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Templates\\AccountCreation.html",
+              "RelativeDocumentMoniker": "Templates\\AccountCreation.html",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Templates\\AccountCreation.html",
+              "RelativeToolTip": "Templates\\AccountCreation.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-18T09:26:31.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistrationConfirmation.html",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Templates\\RegistrationConfirmation.html",
+              "RelativeDocumentMoniker": "Templates\\RegistrationConfirmation.html",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Templates\\RegistrationConfirmation.html",
+              "RelativeToolTip": "Templates\\RegistrationConfirmation.html",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwDcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-18T09:26:19.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\EmailService.cs",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Services\\EmailService.cs",
+              "RelativeToolTip": "Services\\EmailService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAtwD0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T06:32:55.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Address.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Models\\Address.cs",
               "RelativeDocumentMoniker": "Models\\Address.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Models\\Address.cs",
               "RelativeToolTip": "Models\\Address.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T05:53:14.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "ApplicationRoles.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Models\\ApplicationRoles.cs",
               "RelativeDocumentMoniker": "Models\\ApplicationRoles.cs",
@@ -141,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -154,46 +239,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Models\\ApplicationUser.cs",
               "RelativeToolTip": "Models\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBMAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T05:13:24.799Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA4AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T05:06:25.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\Demo\\IdentityDemo\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-17T05:02:30.93Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",

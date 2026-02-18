@@ -8,6 +8,7 @@
         public string? LastName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string? PhoneNumber { get; set; }
+        public string? ProfileImageBase64 { get; set; }
         public DateTime? LastLoggedIn { get; set; }
         public DateTime? CreatedOn { get; set; }
     }

@@ -1,0 +1,83 @@
+﻿@model IdentityDemo.ViewModel.ProfileViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-1" style="min-height: 68vh; max-width: 900px;">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <!-- Welcome/Info Message -->
+            <div class="alert alert-info mb-4 shadow-sm text-center" style="font-size: 1.1rem;">
+                <strong>Welcome to your profile, <span class="text-primary">@Model.FirstName</span>!</strong><br />
+                Here you can review your account details and keep your information up-to-date.
+            </div>
+
+            <div class="card shadow-lg border-0 rounded-4" style="background: linear-gradient(110deg, #f8fafd 70%, #e8f0fe 100%);">
+                <!-- Card Header -->
+                <div class="card-header bg-white text-center border-0 rounded-top-4 pb-2">
+                    <h3 class="fw-bold text-primary mb-1">Account Profile</h3>
+                    <span class="badge bg-primary bg-gradient fs-6 px-3 py-2 rounded-pill">
+                        @Model.Email
+                    </span>
+                </div>
+                <hr class="my-0" />
+                <!-- Card Body -->
+                <div class="card-body px-5 pt-4 pb-3">
+                    <!-- 🔵 Profile Image -->
+                    <div class="text-center mb-4">
+                        <img src="@Model.ProfileImageBase64"
+                             alt="Profile Image"
+                             class="rounded-circle shadow"
+                             style="width:150px; height:150px; object-fit:cover; border:4px solid #dee2e6;" />
+                    </div>
+                    <table class="table table-borderless mb-0" style="font-size: 1rem;">
+                        <tbody>
+                            <tr>
+                                <th class="text-secondary fw-semibold w-50">First Name:</th>
+                                <td class="fw-medium">@Model.FirstName</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary fw-semibold">Last Name:</th>
+                                <td class="fw-medium">@Model.LastName</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary fw-semibold">Phone:</th>
+                                <td class="fw-medium">@Model.PhoneNumber</td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary fw-semibold">Date of Birth:</th>
+                                <td class="fw-medium">
+                                    @(Model.DateOfBirth.HasValue? Model.DateOfBirth.Value.ToString("dd MMM yyyy") : "-")
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary fw-semibold">Account Created:</th>
+                                <td class="fw-medium">
+                                    @(Model.CreatedOn.HasValue? Model.CreatedOn.Value.ToString("dd MMM yyyy, hh:mm tt") : "-")
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="text-secondary fw-semibold">Last Logged In:</th>
+                                <td class="fw-medium">
+                                    @(Model.LastLoggedIn.HasValue? Model.LastLoggedIn.Value.ToString("dd MMM yyyy, hh:mm tt") : "-")
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Card Footer -->
+                <div class="card-footer bg-white border-0 rounded-bottom-4 text-center pt-3 pb-4">
+                    <a asp-action="EditProfile" class="btn btn-info text-white fw-semibold me-3 px-5 py-2 rounded-pill">
+                        Edit Profile
+                    </a>
+                    <a asp-action="ChangePassword" class="btn btn-warning text-dark fw-semibold px-5 py-2 rounded-pill">
+                        Change Password
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

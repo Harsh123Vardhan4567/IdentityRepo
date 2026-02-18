@@ -1,0 +1,99 @@
+﻿@model IdentityDemo.ViewModel.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-3">
+    <div class="row shadow-lg rounded-4 bg-white overflow-hidden mx-auto" style="max-width: 900px;">
+        <!-- Left: Welcome/Branding Section -->
+        <div class="col-md-5 d-none d-md-flex flex-column justify-content-center align-items-center bg-primary bg-gradient text-white py-4 px-2">
+            <div class="text-center">
+                <h4 class="fw-bold mb-2" style="font-size:1.3rem;">Welcome to Dot Net Tutorials</h4>
+                <p class="mb-3 small">
+                    Join a thriving community and access premium content.<br>
+                    <span class="fst-italic">Your learning journey starts here.</span>
+                </p>
+                <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-5425.jpg"
+                     alt="Register" class="img-fluid mb-2" width="110" />
+            </div>
+        </div>
+        <!-- Right: Registration Form Section -->
+        <div class="col-md-7 bg-light py-4 px-3">
+            <h5 class="text-center fw-bold mb-3">Create Your Account</h5>
+
+            <form asp-action="Register" method="post" enctype="multipart/form-data">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show small text-center" role="alert">
+                        <strong>Please fix the errors below and try again:</strong>
+                        <ul class="mb-0 mt-2">
+                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                            {
+                                <li>@error.ErrorMessage</li>
+                            }
+                        </ul>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                <div class="row">
+                    <div class="mb-2 col-md-6">
+                        <label asp-for="FirstName" class="form-label"></label>
+                        <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+                        <span asp-validation-for="FirstName" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-2 col-md-6">
+                        <label asp-for="LastName" class="form-label"></label>
+                        <input asp-for="LastName" class="form-control" placeholder="Last Name (optional)" />
+                        <span asp-validation-for="LastName" class="text-danger small"></span>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Email address" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+                <div class="mb-2">
+                    <label asp-for="PhoneNumber" class="form-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                </div>
+                <div class="mb-2">
+                    <label asp-for="DateOfBirth" class="form-label"></label>
+                    <input asp-for="DateOfBirth" type="date" class="form-control" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger small"></span>
+                </div>
+
+                <div class="row">
+                    <div class="mb-2 col-md-6">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control" type="password" placeholder="Password" />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-2 col-md-6">
+                        <label asp-for="ConfirmPassword" class="form-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Confirm Password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-2">
+                        <label asp-for="ProfileImagebase64" class="form-label">Profile Image</label>
+                        <input asp-for="ProfileImagebase64" type="file" class="form-control" accept="image/*" />
+                        <span asp-validation-for="ProfileImagebase64" class="text-danger small"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 fw-semibold py-2 mt-1 mb-2">
+                    Register
+                </button>
+                <div class="text-center mt-1">
+                    <span class="text-secondary small">Already have an account?</span>
+                    <a asp-action="Login" class="ms-1 text-primary text-decoration-none fw-semibold small">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

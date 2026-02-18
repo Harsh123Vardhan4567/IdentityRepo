@@ -1,4 +1,4 @@
-﻿using ASPNETCoreIdentityDemo.ViewModels;
+﻿
 using IdentityDemo.ViewModel;
 using Microsoft.AspNetCore.Identity;
 
