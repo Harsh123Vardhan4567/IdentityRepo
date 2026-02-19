@@ -33,7 +33,7 @@ namespace IdentityDemo.ViewModel
 
         [Required]
         [DataType(DataType.Password)]
-        [StringLength(100, MinimumLength = 6, ErrorMessage = "Password must be at least 6 characters.")]
+        [StringLength(15, MinimumLength = 8, ErrorMessage = "Password must be at least 8 or not be more than 15  characters.")]
         public string Password { get; set; } = null!;
 
         [Required]

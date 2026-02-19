@@ -29,8 +29,13 @@ namespace IdentityDemo.Services
             var user = await _userManager.FindByIdAsync(userId.ToString());
             if (user == null)
                 return IdentityResult.Failed(new IdentityError { Description = "User not found." });
-            var decodedBytes = WebEncoders.Base64UrlDecode(token);
-            var decodedToken = Encoding.UTF8.GetString(decodedBytes);
+            if (user.EmailConfirmed)
+            {
+                return IdentityResult.Failed(new IdentityError { Description = "Alredy confirmed." });
+            }
+            
+            var decodedToken = Encoding.UTF8.GetString(
+                WebEncoders.Base64UrlDecode(token));
             var result = await _userManager.ConfirmEmailAsync(user, decodedToken);
             if (result.Succeeded)
             {
@@ -65,6 +70,7 @@ namespace IdentityDemo.Services
            
         }
 
+
         public  async Task<SignInResult> LoginUserAsync(LoginViewModel model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
@@ -74,16 +80,22 @@ namespace IdentityDemo.Services
             }
             if (!await _userManager.IsEmailConfirmedAsync(user))
                 return SignInResult.NotAllowed;
-            var result = await _signInManager.PasswordSignInAsync(user.UserName!, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+
+           
+                var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: true);
             if (result.Succeeded)
             {
                 user.LastLogin = DateTime.UtcNow;
                 await _userManager.UpdateAsync(user);
+              
 
             }
             return result;
-
         }
+           
+
+        
 
         public async  Task LogoutUserAsync()
         {
@@ -123,25 +135,33 @@ namespace IdentityDemo.Services
 
         }
 
-        public async  Task SendEmailConfirmationAsync(string email)
+        public async Task SendEmailConfirmationAsync(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
                 throw new ArgumentException("Email is required.", nameof(email));
-            var user = await _userManager.FindByEmailAsync(email);
+
+            ApplicationUser user = await _userManager.FindByEmailAsync(email);
+
             if (user == null)
-            {
-                // Prevent user enumeration by not disclosing existence
-                return;
-            }
-            if (await _userManager.IsEmailConfirmedAsync(user))
-            {
-                // Email already confirmed; no action needed
-                return;
-            }
-            var token = GenerateToken.GenerateEmailConfirmationTokenAsync(_userManager, user);
-            var baseUrl = _configuration["AppSettings:BaseUrl"] ?? throw new InvalidOperationException("BaseUrl is not configured.");
-            var confirmationLink = $"{baseUrl}/Account/ConfirmEmail?userId={user.Id}&token={token}";
-            await _emailService.SendResendConfirmationEmailAsync(user.Email!, user.FirstName!, confirmationLink);
+                throw new InvalidOperationException("User not found.");
+
+            if (user.EmailConfirmed)
+                return; 
+
+           
+            var token = GenerateToken.GenerateEmailConfirmationTokenAsync(_userManager,user);
+
+            var baseUrl = _configuration["AppSettings:BaseUrl"]
+                          ?? throw new InvalidOperationException("BaseUrl is not configured.");
+
+            var confirmationLink = $"{baseUrl}/Account/ConfirmEmail?userId={user.Id}&token={token.Result}";
+
+            await _emailService.SendResendConfirmationEmailAsync(
+                user.Email!,
+                user.FirstName ?? "User",
+                confirmationLink
+            );
         }
+
     }
 }

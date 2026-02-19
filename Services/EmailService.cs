@@ -22,7 +22,7 @@ namespace IdentityDemo.Services
 
         public async Task SendAccountCreatedEmailAsync(string toEmail, string firstName, string loginLink)
         {
-            string filepath = Path.Combine(_env.ContentRootPath, "Templates", "AccountCreation");
+            string filepath = Path.Combine(_env.ContentRootPath, "Templates", "AccountCreation.html");
             string htmlContent = await File.ReadAllTextAsync(filepath);
             htmlContent = htmlContent.Replace("{{FirstName}}", firstName);
             htmlContent = htmlContent.Replace("{{LoginLink}}", loginLink);
@@ -64,11 +64,11 @@ namespace IdentityDemo.Services
 
         public async  Task SendResendConfirmationEmailAsync(string toEmail, string firstName, string confirmationLink)
         {
-            string filepath = Path.Combine(_env.ContentRootPath, "Templates", "RegistrationConfirmation");
+            string filepath = Path.Combine(_env.ContentRootPath, "Templates", "RegistrationConfirmation.html");
             string htmlcontent = await File.ReadAllTextAsync(filepath);
             htmlcontent = htmlcontent.Replace("{{firstName}}", firstName);
-            htmlcontent = htmlcontent.Replace("{{ConfirmationLink}}", confirmationLink);
-            htmlcontent = htmlcontent.Replace("{{DateTime}} ", DateTime.UtcNow.Year.ToString());
+            htmlcontent = htmlcontent.Replace("{{confirmationLink}}", confirmationLink);
+            htmlcontent = htmlcontent.Replace("{{Year}}", DateTime.Now.Year.ToString());
 
             await SendEmailAsync(toEmail, "Email Confirmation", htmlcontent, true);
         }

@@ -172,8 +172,8 @@ namespace IdentityDemo.Controllers
                 if (!ModelState.IsValid)
                     return View(model);
                 await _accountService.SendEmailConfirmationAsync(model.Email);
-                ViewBag.Message = "If the email is registered, a confirmation link has been sent.";
-                return View("ResendEmailConfirmationSuccess");
+          
+                return RedirectToAction("RegistrationConfirmation");
             }
             catch (Exception ex)
             {

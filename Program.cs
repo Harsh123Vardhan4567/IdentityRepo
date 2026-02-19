@@ -4,6 +4,7 @@ using IdentityDemo.Services;
 using IdentityDemo.Settings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +15,30 @@ builder.Services.Configure<EmailSettings>(
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerIdentityConnection")));
+
+
 // Register ASP.NET Core Identity Services
 //We are explicitly telling ASP.NET Core which user and role entity types our Identity system should use.
-builder.Services.AddIdentity<ApplicationUser, ApplicationRoles>()
+builder.Services.AddIdentity<ApplicationUser, ApplicationRoles>(
+    options => {
+        options.Password.RequireDigit = true;
+        options.Password.RequiredLength = 8;
+        options.Password.RequireNonAlphanumeric = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequiredUniqueChars =1;
+        
+
+    })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
+});
+//USer token become inavalid if user tries to do it .
 builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 {
     options.TokenLifespan = TimeSpan.FromMinutes(30);
