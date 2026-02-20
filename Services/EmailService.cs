@@ -31,6 +31,16 @@ namespace IdentityDemo.Services
 
         }
 
+        public  async Task SendPasswordResetEmailAsync(string toEmail, string firstName, string resetLink)
+        {
+            string filepath = Path.Combine(_env.ContentRootPath, "Templates", "PasswordReset.html");
+            string htmlContent = await File.ReadAllTextAsync(filepath);
+            htmlContent = htmlContent.Replace("{{firstName}}", firstName);
+            htmlContent = htmlContent.Replace("{{resetLink}}", resetLink);
+          
+            await SendEmailAsync(toEmail, "Reset Password confirmation ", htmlContent, true);
+        }
+
         public async Task SendRegistrationConfirmationEmailAsync(string toEmail,string firstName,string confirmationLink)
         {
             try

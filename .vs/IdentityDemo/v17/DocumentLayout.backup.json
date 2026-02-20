@@ -3,47 +3,76 @@
   "WorkspaceRootPath": "D:\\Demo\\IdentityDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\resetpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\resetpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\AppData\\Local\\SourceServer\\1aa3181617e17c01e392e29d03a03be3dadfd8df8d0c1a2c8c21a005fa52ad0f\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\viewmodel\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:viewmodel\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\templates\\passwordreset.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:templates\\passwordreset.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\viewmodel\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:viewmodel\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\wwwroot\\js\\register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -56,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\settings\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:settings\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -69,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 27,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -129,54 +154,131 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\1aa3181617e17c01e392e29d03a03be3dadfd8df8d0c1a2c8c21a005fa52ad0f\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\1aa3181617e17c01e392e29d03a03be3dadfd8df8d0c1a2c8c21a005fa52ad0f\\Controllers\\AccountController.cs [Read Only]",
-              "ViewState": "AgIAADQAAAAAAAAAAAD4v0sAAABEAAAAAQAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T12:44:58.183Z",
-              "EditorCaption": " [Read Only]"
+              "DocumentIndex": 0,
+              "Title": "ResetPasswordConfirmation.cshtml",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "RelativeToolTip": "Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-20T10:34:46.227Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ResetPassword.cshtml",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeToolTip": "Views\\Account\\ResetPassword.cshtml",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwFUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-20T09:55:16.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ForgotPasswordConfirmation.cshtml",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeToolTip": "Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-20T09:23:29.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABUAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-20T09:10:40.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PasswordReset.html",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Templates\\PasswordReset.html",
+              "RelativeDocumentMoniker": "Templates\\PasswordReset.html",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\Templates\\PasswordReset.html",
+              "RelativeToolTip": "Templates\\PasswordReset.html",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-20T06:37:54.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ResetPasswordViewModel.cs",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\ViewModel\\ResetPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ResetPasswordViewModel.cs",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\ViewModel\\ResetPasswordViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ResetPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T06:09:50.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ForgotPasswordViewModel.cs",
+              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\ViewModel\\ForgotPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ForgotPasswordViewModel.cs",
+              "ToolTip": "D:\\Demo\\IdentityDemo\\ViewModel\\ForgotPasswordViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ForgotPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T06:08:21.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "IAccountService.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Services\\IAccountService.cs",
               "RelativeDocumentMoniker": "Services\\IAccountService.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Services\\IAccountService.cs",
               "RelativeToolTip": "Services\\IAccountService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-19T12:34:55.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAD0AAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-19T11:36:45.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-19T09:57:36.722Z"
+              "WhenOpened": "2026-02-19T09:57:36.722Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "register.js",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\wwwroot\\js\\register.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\register.js",
@@ -188,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\ViewModel\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\RegisterViewModel.cs",
@@ -200,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Account\\Profile.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Profile.cshtml",
@@ -212,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -224,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -236,31 +338,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Services\\IEmailService.cs",
               "RelativeDocumentMoniker": "Services\\IEmailService.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Services\\IEmailService.cs",
               "RelativeToolTip": "Services\\IEmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T11:40:12.939Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Account\\Register.cshtml",
               "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAIwHAAAABrAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAIwHAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T11:28:03.55Z"
+              "WhenOpened": "2026-02-18T11:28:03.55Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "EmailSettings.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Settings\\EmailSettings.cs",
               "RelativeDocumentMoniker": "Settings\\EmailSettings.cs",
@@ -272,40 +375,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAEwJMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAuwOEAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T09:30:33.411Z"
+              "WhenOpened": "2026-02-18T09:30:33.411Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "AccountService.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "Services\\AccountService.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Services\\AccountService.cs",
               "RelativeToolTip": "Services\\AccountService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAnwNgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T09:30:33.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "EmailService.cs",
               "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "Services\\EmailService.cs",
               "ToolTip": "D:\\Demo\\IdentityDemo\\Services\\EmailService.cs",
               "RelativeToolTip": "Services\\EmailService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAawBcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAlwCgAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T06:32:55.548Z"
+              "WhenOpened": "2026-02-17T06:32:55.548Z",
+              "EditorCaption": ""
             }
           ]
         },

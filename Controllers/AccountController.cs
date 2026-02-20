@@ -15,13 +15,13 @@ namespace IdentityDemo.Controllers
             _accountService = accountService;
             _logger = logger;
         }
-        
+
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
@@ -59,13 +59,13 @@ namespace IdentityDemo.Controllers
                 return View(model);
             }
         }
-       
+
         [HttpGet]
         public IActionResult RegistrationConfirmation()
         {
             return View();
         }
-       
+
         [HttpGet]
         public async Task<IActionResult> ConfirmEmail(Guid userId, string token)
         {
@@ -88,13 +88,13 @@ namespace IdentityDemo.Controllers
                 return View("Error");
             }
         }
-        
+
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string? returnUrl = null)
@@ -139,7 +139,7 @@ namespace IdentityDemo.Controllers
                 return View("Error");
             }
         }
-       
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -156,13 +156,32 @@ namespace IdentityDemo.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-       
+
+
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+            await _accountService.SendPasswordResetLinkAsync(model.Email);
+            // Always show confirmation view (don’t reveal if email exists)
+            return View("ForgotPasswordConfirmation");
+        }
+
         [HttpGet]
         public IActionResult ResendEmailConfirmation()
         {
             return View();
         }
-    
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResendEmailConfirmation(ResendConfirmationEmailViewModel model)
@@ -172,7 +191,7 @@ namespace IdentityDemo.Controllers
                 if (!ModelState.IsValid)
                     return View(model);
                 await _accountService.SendEmailConfirmationAsync(model.Email);
-          
+
                 return RedirectToAction("RegistrationConfirmation");
             }
             catch (Exception ex)
@@ -181,6 +200,32 @@ namespace IdentityDemo.Controllers
                 ModelState.AddModelError("", "An unexpected error occurred. Please try again later.");
                 return View(model);
             }
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string email, string token)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(token))
+                return BadRequest("Invalid password reset request.");
+            return View(new ResetPasswordViewModel { Email = email, Token = token });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+            var result = await _accountService.ResetPasswordAsync(model);
+            if (result.Succeeded)
+                return View("ResetPasswordConfirmation");
+            foreach (var error in result.Errors)
+                ModelState.AddModelError("", error.Description);
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
         }
     }
 }

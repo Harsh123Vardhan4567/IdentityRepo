@@ -12,5 +12,7 @@ namespace IdentityDemo.Services
         Task LogoutUserAsync();
         Task SendEmailConfirmationAsync(string email);
         Task<ProfileViewModel> GetUserProfileByEmailAsync(string email);
+        Task<bool> SendPasswordResetLinkAsync(string email);
+        Task<IdentityResult> ResetPasswordAsync(ResetPasswordViewModel model);
     }
 }

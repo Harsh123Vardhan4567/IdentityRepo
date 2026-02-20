@@ -135,6 +135,29 @@ namespace IdentityDemo.Services
 
         }
 
+        public async Task<IdentityResult> ResetPasswordAsync(ResetPasswordViewModel model)
+        {
+            // Find the user associated with the provided email
+            var user = await _userManager.FindByEmailAsync(model.Email);
+
+            if (user == null)
+            {
+                return IdentityResult.Failed(new IdentityError { Description = "Invalid request." });
+
+            }
+            // Decode the token that was passed in from the reset link
+            var decodebytes = WebEncoders.Base64UrlDecode(model.Token);
+            var decodeToken = Encoding.UTF8.GetString(decodebytes);
+
+            var result = await _userManager.ResetPasswordAsync(user, decodeToken, model.ConfirmPassword);
+            if (result.Succeeded)
+            {
+                await _userManager.UpdateSecurityStampAsync(user);
+            }
+            return result;
+
+        }
+
         public async Task SendEmailConfirmationAsync(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -163,5 +186,34 @@ namespace IdentityDemo.Services
             );
         }
 
+        public  async Task<bool> SendPasswordResetLinkAsync(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                throw new ArgumentException("Email is required.", nameof(email));
+
+         var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null && !(user.EmailConfirmed))
+                return false;
+
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var encodedToken = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+
+            var baseUrl = _configuration["AppSettings:BaseUrl"]
+                              ?? throw new InvalidOperationException("BaseUrl is not configured.");
+
+                var confirmationLink = $"{baseUrl}/Account/ResetPassword?email={user.Email}&token={encodedToken}";
+
+            await _emailService.SendResendConfirmationEmailAsync(
+                user.Email!,
+                user.FirstName ?? "User",
+                confirmationLink
+            );
+            return true;
+
+
+        }
     }
 }
