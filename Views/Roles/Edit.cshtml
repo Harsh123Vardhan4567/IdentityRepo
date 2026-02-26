@@ -1,0 +1,129 @@
+﻿@using IdentityDemo.ViewModel.Roles
+@model RoleEditViewModel
+@{
+    ViewData["Title"] = "Edit Role";
+}
+
+<div class="container mt-1">
+
+    <!-- Page Header -->
+    <div class="mb-4 border-bottom pb-2">
+        <h1 class="h4 fw-bold text-primary mb-1">Edit Role</h1>
+        <p class="text-muted small mb-0">Update the role’s name, description, and status. All changes take effect immediately.</p>
+    </div>
+
+    <!-- Alerts -->
+    @if (TempData["Success"] is string sMsg)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>@sMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] is string eMsg)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>@eMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Two-column Layout -->
+    <div class="row g-4">
+
+        <!-- Left Column: Form -->
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+
+                    <!-- Model-level and field errors (visible only when there are errors) -->
+                    @if (!ViewData.ModelState.IsValid && ViewData.ModelState.Values.Any(v => v.Errors.Count > 0))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <div class="fw-semibold mb-1">We couldn’t save your changes.</div>
+                            <div class="small text-muted mb-2">Please review the messages below and try again.</div>
+                            <div asp-validation-summary="All"></div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-action="Edit" method="post" novalidate>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="ConcurrencyStamp" />
+
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fw-semibold">Role Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="e.g., Admin, Manager, Support" />
+                            <div class="form-text">Role names must be unique. Use descriptive and consistent naming.</div>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label fw-semibold">Description</label>
+                            <textarea asp-for="Description" rows="4" class="form-control" maxlength="1000" placeholder="Describe what this role can do"></textarea>
+                            <div class="form-text">Brief, admin-facing note about this role’s purpose and permissions.</div>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <!-- Active Status -->
+                        <div class="form-check form-switch mb-3">
+                            <input asp-for="IsActive" class="form-check-input" />
+                            <label asp-for="IsActive" class="form-check-label fw-semibold">Active</label>
+                            <div class="form-text">
+                                Inactive roles will remain in the system but cannot be assigned to new users.
+                            </div>
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary" type="submit">
+                                Save Changes
+                            </button>
+                            <a asp-action="Index" class="btn btn-info">Back to Roles</a>
+                            <a asp-action="Index" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Role Info & Guidelines -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <h6 class="fw-bold mb-3">Role Status</h6>
+                    @if (Model.IsActive)
+                    {
+                        <span class="badge bg-success px-3 py-2">Active</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary px-3 py-2">Inactive</span>
+                    }
+                    <div class="mt-3 small text-muted">
+                        <strong>Role ID:</strong> @Model.Id
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="fw-bold mb-3">Guidelines</h6>
+                    <ul class="small mb-0 ps-3">
+                        <li>Ensure the name is unique and descriptive.</li>
+                        <li>Keep descriptions concise but informative.</li>
+                        <li>Deactivate roles instead of deleting for record-keeping.</li>
+                        <li>Review permissions before making the role active.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

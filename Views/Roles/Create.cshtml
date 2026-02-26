@@ -1,0 +1,90 @@
+﻿@using IdentityDemo.ViewModel.Roles
+@model RoleCreateViewModel
+@{
+    ViewData["Title"] = "Create Role";
+}
+
+<div class="container mt-1">
+
+    <!-- Page Header -->
+    <div class="mb-4 border-bottom pb-2">
+        <h1 class="h4 fw-bold text-primary mb-1">Create Role</h1>
+        <p class="text-muted small mb-0">Add a new role with a clear name and helpful description. You can mark it inactive if you’re planning ahead.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="row g-4">
+
+        <!-- Left Column: Form -->
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+
+                    <!-- Model-level and field errors (visible only when there are errors) -->
+                    @if (!ViewData.ModelState.IsValid && ViewData.ModelState.Values.Any(v => v.Errors.Count > 0))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <div class="fw-semibold mb-1">We couldn’t create the role.</div>
+                            <div class="small text-muted mb-2">Please review the messages below and try again.</div>
+                            <div asp-validation-summary="All"></div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-action="Create" method="post" novalidate>
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fw-semibold">Role Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="e.g., Admin, Manager, Support" />
+                            <div class="form-text">Role names must be unique. Use descriptive and consistent naming.</div>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label fw-semibold">Description</label>
+                            <textarea asp-for="Description" rows="4" class="form-control" maxlength="1000" placeholder="Describe what this role can do"></textarea>
+                            <div class="form-text">Brief, admin-facing note about this role’s purpose and typical permissions. Max 1000 characters.</div>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <!-- Active Status -->
+                        <div class="form-check form-switch mb-3">
+                            <input asp-for="IsActive" class="form-check-input" />
+                            <label asp-for="IsActive" class="form-check-label fw-semibold">Active</label>
+                            <div class="form-text">
+                                Inactive roles remain in the system but should not be assigned to new users.
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-primary" type="submit">Create Role</button>
+                            <button class="btn btn-dark" type="reset">Reset</button>
+                            <a asp-action="Index" class="btn btn-info">Back to Roles</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Guidance -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="fw-bold mb-3">Guidelines</h6>
+                    <ul class="small mb-0 ps-3">
+                        <li>Pick a clear, unique name (e.g., <em>SupportAgent</em>, <em>ContentManager</em>).</li>
+                        <li>Use the description to help other admins understand the scope of this role.</li>
+                        <li>Prefer deactivating over deleting to keep an audit trail.</li>
+                        <li>You can edit or deactivate the role at any time after creation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

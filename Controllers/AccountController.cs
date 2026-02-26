@@ -63,6 +63,7 @@ namespace IdentityDemo.Controllers
         [HttpGet]
         public IActionResult RegistrationConfirmation()
         {
+
             return View();
         }
 
@@ -90,8 +91,9 @@ namespace IdentityDemo.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login(string? ReturnUrl = null)
         {
+            ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
 

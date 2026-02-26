@@ -1,6 +1,7 @@
-using System.Diagnostics;
 using IdentityDemo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace IdentityDemo.Controllers
 {
@@ -23,10 +24,15 @@ namespace IdentityDemo.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [AllowAnonymous]
+        public IActionResult NonSecureMethod()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
+        }
+        [Authorize]
+        public IActionResult SecureMethod()
+        {
+            return View();
         }
     }
 }

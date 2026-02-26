@@ -1,0 +1,99 @@
+﻿@using IdentityDemo.ViewModel
+@model PageResult<object>
+
+@* The pager works with any list wrapped inside a PagedResult<T> model *@
+
+@{
+    // Get the current action and controller name from the route
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+
+    // This dictionary will hold all query string parameters from the current URL
+    // except the "pagenumber" parameter (so we can replace it with a new one later)
+    var routeValues = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+    // Loop through all query parameters from the current request URL
+    foreach (var kv in ViewContext.HttpContext.Request.Query)
+    {
+        // Skip the "page" parameter because we'll manually set it later for each link
+        if (!string.Equals(kv.Key, "pagenumber", StringComparison.OrdinalIgnoreCase))
+        {
+            // Store the query parameter and its value in the dictionary
+            // Example: search=Admin, isActive=true, pagesize=5
+            routeValues[kv.Key] = kv.Value.ToString();
+        }
+    }
+
+    // Calculate the first and previous page numbers
+    var firstPage = 1;
+    var prevPage = Math.Max(1, Model.PageNumber - 1); // Never go below page 1
+
+    // Ensure we have a valid total page count
+    var totalPages = Model.TotalPages;
+
+    // Calculate the next and last page numbers
+    var nextPage = Math.Min(totalPages, Model.PageNumber + 1); // Never go beyond last page
+    var lastPage = totalPages;
+}
+
+<!-- Pagination Navigation -->
+<nav aria-label="Pagination" class="mt-3">
+    <ul class="pagination justify-content-center">
+
+        <!-- First Page Button -->
+        <!-- Use current controller -->
+        <!-- Use current action -->
+        <!-- Preserve all current filters except 'page' -->
+        <!-- Set page=1 -->
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a class="page-link"
+               asp-controller="@controller"
+               asp-action="@action"
+               asp-all-route-data="routeValues"
+               asp-route-pagenumber="@firstPage">First</a>
+        </li>
+
+        <!-- Previous Page Button -->
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a class="page-link"
+               asp-controller="@controller"
+               asp-action="@action"
+               asp-all-route-data="routeValues"
+               asp-route-pagenumber="@prevPage">
+                <!-- Set page to previous page -->
+                Previous
+            </a>
+        </li>
+
+        <!-- Current Page Display (Not clickable) -->
+        <li class="page-item active">
+            <span class="page-link">
+                Page @Model.PageNumber of @Model.TotalPages
+            </span>
+        </li>
+
+        <!-- Next Page Button -->
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a class="page-link"
+               asp-controller="@controller"
+               asp-action="@action"
+               asp-all-route-data="routeValues"
+               asp-route-pagenumber="@nextPage">
+                <!-- Set page to next page -->
+                Next
+            </a>
+        </li>
+
+        <!-- Last Page Button -->
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a class="page-link"
+               asp-controller="@controller"
+               asp-action="@action"
+               asp-all-route-data="routeValues"
+               asp-route-pagenumber="@lastPage">
+                <!-- Set page to last page -->
+                Last
+            </a>
+        </li>
+    </ul>
+</nav>

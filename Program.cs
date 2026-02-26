@@ -38,6 +38,11 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Lockout.MaxFailedAccessAttempts = 5;
     options.Lockout.AllowedForNewUsers = true;
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    // This sets the path to the login page users are redirected to if unauthenticated
+    options.LoginPath = "/Account/Login";  // Change if your login page is elsewhere
+});
 //USer token become inavalid if user tries to do it .
 builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 {
@@ -46,6 +51,7 @@ builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 
 var app = builder.Build();

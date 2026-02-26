@@ -1,0 +1,201 @@
+﻿@using IdentityDemo.ViewModel
+@using IdentityDemo.ViewModel.Roles
+@using IdentityDemo.ViewModel.Roles
+
+@model PageResult<RoleListItemViewModel>
+
+@{
+    ViewData["Title"] = "Roles";
+    var filter = (RoleListFilterViewModel)ViewBag.Filter;
+}
+
+<div class="container mt-1">
+
+    <!-- Page Header -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4 pb-2 border-bottom">
+        <div>
+            <h1 class="h3 mb-1 fw-bold text-primary">Roles Administration</h1>
+            <p class="text-muted mb-0">
+                Manage application roles, update permissions, and review assigned users.
+            </p>
+        </div>
+        <div>
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-lg me-1"></i>Create New Role
+            </a>
+        </div>
+    </div>
+
+    <!-- Alerts -->
+    @if (TempData["Success"] is string sMsg)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>@sMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] is string eMsg)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>@eMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Filter Bar -->
+    <form method="get" asp-action="Index" asp-controller="Roles" class="row g-2 align-items-end mb-3">
+        <div class="col-md-4">
+            <label class="form-label">Search</label>
+            <input name="Search" value="@filter.Search" class="form-control"
+                   placeholder="Search by name or description..." />
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Status</label>
+            <select name="IsActive" class="form-select">
+                <option value="">All Status</option>
+                <option value="true" selected="@(filter.IsActive == true)">Active</option>
+                <option value="false" selected="@(filter.IsActive == false)">Inactive</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Page Size</label>
+            <select name="PageSize" class="form-select">
+                @foreach (var size in new[] { 5, 10, 20, 50 })
+                {
+                    <option value="@size" selected="@(filter.PageSize == size)">@size / page</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2 d-grid d-sm-flex gap-2">
+            <button class="btn btn-primary" type="submit">
+                <i class="bi bi-funnel me-1"></i> Apply
+            </button>
+            <!-- Clear = go to Index without query string -->
+            <a asp-action="Index" class="btn btn-info">
+                <i class="bi bi-x-circle me-1"></i> Clear
+            </a>
+        </div>
+    </form>
+
+    <!-- Table / Empty state -->
+    @if (Model.Items.Any())
+    {
+        <div class="card shadow border-0 rounded">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th style="width: 20%;">Name</th>
+                                <th style="width: 43%;">Description</th>
+                                <th style="width: 12%;">Status</th>
+                                <th style="width: 10%;">Created</th>
+                                <th class="text-end" style="width: 15%;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var r in Model.Items)
+                            {
+                                var desc = r.Description ?? "";
+                                var shortDesc = desc.Length > 80 ? desc.Substring(0, 77) + "..." : desc;
+
+                                <tr>
+                                    <td class="fw-semibold">@r.Name</td>
+                                    <td>
+                                        <span data-bs-toggle="tooltip" title="@desc">@shortDesc</span>
+                                    </td>
+                                    <td>
+                                        @if (r.IsActive)
+                                        {
+                                            <span class="badge bg-success">Active</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger">Inactive</span>
+                                        }
+                                    </td>
+                                    <td>@(r.CreatedOn?.ToString("yyyy-MM-dd") ?? "-")</td>
+                                    <td class="text-end">
+                                        <a asp-action="Details" asp-route-id="@r.Id"
+                                           class="btn btn-sm btn-outline-info me-2">View</a>
+                                        <a asp-action="Edit" asp-route-id="@r.Id"
+                                           class="btn btn-sm btn-outline-primary me-2">Edit</a>
+                                        <button class="btn btn-sm btn-outline-danger"
+                                                type="button"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#confirmDeleteModal"
+                                                data-role-id="@r.Id"
+                                                data-role-name="@r.Name">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pager -->
+        <partial name="~/Views/Shared/_Pager.cshtml"
+                 model="new PageResult<object> { Items = Array.Empty<object>(), TotalCount = Model.TotalCount, PageNumber = Model.PageNumber, PageSize = Model.PageSize }" />
+    }
+    else
+    {
+        <div class="card border-0 shadow-sm">
+            <div class="card-body text-center py-5">
+                <div class="display-6 mb-2">No roles to display</div>
+                <p class="text-muted mb-4">Try adjusting filters or create your first role.</p>
+                <a asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-lg me-1"></i>Create Role
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Delete Confirmation Modal (centered) -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteLabel">Delete Role</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete role <strong id="delRoleName"></strong>?
+                <div class="text-muted small mt-2">This action cannot be undone.</div>
+            </div>
+            <div class="modal-footer">
+                <form id="delForm" method="post" asp-action="Delete" asp-controller="Roles">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="id" id="delId" />
+                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(function () {
+            // Enable Bootstrap tooltips
+            $('[data-bs-toggle="tooltip"]').tooltip();
+
+            // Show delete modal with populated role info
+            $('#confirmDeleteModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var roleId = button.data('role-id');
+                var roleName = button.data('role-name');
+
+                $('#delRoleName').text(roleName || '');
+                $('#delId').val(roleId || '');
+            });
+        });
+    </script>
+}
