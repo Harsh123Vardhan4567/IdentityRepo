@@ -51,15 +51,24 @@ namespace IdentityDemo.Controllers
             try
             {
                 if (!ModelState.IsValid)
-                    return View(model);
-                var (result, newId) = await _userService.CreateAsync(model);
-                if (result.Succeeded)
                 {
-                    SetSuccess($"User '{model.Email}' was created successfully.");
-                    return RedirectToAction(nameof(Index));
+                    return View(model);
                 }
-                AddIdentityErrors(result);
-                return View(model);
+                if (User.HasClaim("Permission", "AddUser"))
+
+
+
+                {
+                    var (result, newId) = await _userService.CreateAsync(model);
+                    if (result.Succeeded)
+                    {
+                        SetSuccess($"User '{model.Email}' was created successfully.");
+                        return RedirectToAction(nameof(Index));
+                    }
+                    AddIdentityErrors(result);
+                    return View(model);
+                }
+                return Forbid();
             }
             catch (DbUpdateException dbx)
             {
@@ -144,13 +153,21 @@ namespace IdentityDemo.Controllers
         {
             try
             {
-                var userDetailsViewModel = await _userService.GetDetailsAsync(id);
-                if (userDetailsViewModel == null)
+                if (User.HasClaim("Permission", "ViewUsers"))
                 {
-                    SetError("The requested user was not found.");
-                    return RedirectToAction(nameof(Index));
+
+                    var userDetailsViewModel = await _userService.GetDetailsAsync(id);
+                    if (userDetailsViewModel == null)
+                    {
+                        SetError("The requested user was not found.");
+                        return RedirectToAction(nameof(Index));
+                    }
+                    return View(userDetailsViewModel);
                 }
-                return View(userDetailsViewModel);
+                else
+                {
+                    return Forbid();
+                }
             }
             catch (Exception ex)
             {

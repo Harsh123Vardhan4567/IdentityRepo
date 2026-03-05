@@ -5,6 +5,7 @@ using IdentityDemo.ViewModel;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using System.Security.Claims;
 using System.Text;
 
 namespace IdentityDemo.Services
@@ -124,7 +125,22 @@ namespace IdentityDemo.Services
             }
             
             IdentityResult roleres = await _userManager.AddToRoleAsync(user, "User");
-            if (roleres.Succeeded==false) { return roleres; }
+            if (roleres.Succeeded == false) { return roleres; }
+
+            // 🔹 Add Claims
+            var claims = new List<Claim>
+            {
+                new Claim("Permission", "ViewUsers"),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.UserName)
+            };
+
+            var claimResult = await _userManager.AddClaimsAsync(user, claims);
+            if (!claimResult.Succeeded)
+            {
+                return claimResult;
+            }
+
 
             var token = GenerateToken.GenerateEmailConfirmationTokenAsync(_userManager, user);
             var baseUrl = _configuration["AppSettings:BaseUrl"] ?? throw new InvalidOperationException("BaseUrl is not configured.");

@@ -143,3 +143,4 @@ D:\Demo\IdentityDemo\bin\Debug\net8.0\MailKit.dll
 D:\Demo\IdentityDemo\bin\Debug\net8.0\MimeKit.dll
 D:\Demo\IdentityDemo\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\Demo\IdentityDemo\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Demo\IdentityDemo\obj\Debug\net8.0\IdentityDemo.sourcelink.json
