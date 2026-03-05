@@ -1,0 +1,141 @@
+﻿@model IdentityDemo.ViewModel.Users.UserEditViewModel
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<div class="container mt-1">
+    <!-- Page header -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3 pb-2 border-bottom">
+        <div>
+            <h1 class="h4 fw-bold mb-1 text-primary">Edit User</h1>
+            <p class="text-muted small mb-0">Update the user’s profile and account settings.</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a asp-action="Index" class="btn btn-info">
+                <i class="bi bi-arrow-left me-1"></i> Back to Users
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Form Section -->
+        <div class="col-lg-7 col-xl-6">
+            <div class="card shadow border-0 rounded">
+                <div class="card-header bg-dark text-white">
+                    <i class="bi bi-person-gear me-2"></i> User Information
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" method="post" novalidate>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="ConcurrencyStamp" />
+
+                        <!-- Validation -->
+                        @if (!ViewData.ModelState.IsValid && ViewData.ModelState.Values.Any(v => v.Errors.Count > 0))
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <div class="fw-semibold mb-1">We couldn’t save your changes.</div>
+                                <div class="small text-muted mb-2">Please review the messages below and try again.</div>
+                                <div asp-validation-summary="All"></div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+
+                        <div class="row g-3">
+                            <!-- First & Last Name (same row) -->
+                            <div class="col-md-6">
+                                <label asp-for="FirstName" class="form-label"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                    <input asp-for="FirstName" class="form-control" autocomplete="given-name" />
+                                </div>
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="LastName" class="form-label"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                    <input asp-for="LastName" class="form-control" autocomplete="family-name" />
+                                </div>
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+
+                            <!-- Email (full width single row) -->
+                            <div class="col-12">
+                                <label asp-for="Email" class="form-label"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                    <input asp-for="Email" class="form-control" type="email" autocomplete="email" />
+                                </div>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <!-- Date of Birth & Phone (same row) -->
+                            <div class="col-md-6">
+                                <label asp-for="DateOfBirth" class="form-label"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-calendar-date"></i></span>
+                                    <input asp-for="DateOfBirth" class="form-control" type="date" />
+                                </div>
+                                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="PhoneNumber" class="form-label"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                    <input asp-for="PhoneNumber" class="form-control" type="tel" autocomplete="tel" />
+                                </div>
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+
+                            <!-- IsActive & EmailConfirmed (same row) -->
+                            <div class="col-md-6 d-flex align-items-center gap-4">
+                                <div class="form-check form-switch">
+                                    <input asp-for="IsActive" class="form-check-input" />
+                                    <label asp-for="IsActive" class="form-check-label"></label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input asp-for="EmailConfirmed" class="form-check-input" />
+                                    <label asp-for="EmailConfirmed" class="form-check-label"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <button class="btn btn-primary">
+                                <i class="bi bi-save me-1"></i> Save Changes
+                            </button>
+                            <a asp-action="Index" class="btn btn-info">
+                                <i class="bi bi-x-circle me-1"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guidelines Section -->
+        <div class="col-lg-5 col-xl-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <i class="bi bi-lightbulb me-2"></i> Guidelines
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i> First and last names should be properly capitalized.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i> Email must be unique and valid.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i> Phone number should include country code if international.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i> Inactive users will not be able to log in.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i> Confirmed email is required for password reset and notifications.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i> Use Manage Roles to adjust user permissions.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i> Use Reset Password flow or send a password reset email to manage password.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

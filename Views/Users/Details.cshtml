@@ -1,0 +1,174 @@
+﻿@model IdentityDemo.ViewModel.Users.UserDetailsViewModel
+@{
+    ViewData["Title"] = "User Details";
+
+    string fullName = $"{Model.FirstName} {Model.LastName}".Trim();
+    string initials =
+        (!string.IsNullOrWhiteSpace(Model.FirstName) ? Model.FirstName[0].ToString() : "") +
+        (!string.IsNullOrWhiteSpace(Model.LastName) ? Model.LastName[0].ToString() : "");
+
+    string activeBadge = Model.IsActive ? "bg-success" : "bg-secondary";
+    string emailBadge = Model.EmailConfirmed ? "bg-success" : "bg-warning text-dark";
+}
+
+<div class="container mt-1">
+
+    <!-- Page header -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3 pb-2 border-bottom">
+        <div>
+            <h2 class="h4 fw-bold text-primary mb-1">
+                User Profile: @(!string.IsNullOrWhiteSpace(fullName) ? fullName : Model.UserName)
+            </h2>
+            <p class="text-muted small mb-0">Review account details, health, and role assignments.</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a asp-controller="Users" asp-action="ManageRoles" asp-route-id="@Model.Id" class="btn btn-primary">
+                <i class="bi bi-people me-1"></i> Manage Roles
+            </a>
+            <a asp-controller="Users" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">
+                <i class="bi bi-pencil-square me-1"></i> Edit User
+            </a>
+            <a asp-controller="Users" asp-action="Index" class="btn btn-dark">
+                <i class="bi bi-arrow-left me-1"></i> Back to Users
+            </a>
+        </div>
+    </div>
+
+    <!-- Alerts -->
+    @if (TempData["Success"] is string sMsg)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>@sMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] is string eMsg)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>@eMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row g-3">
+        <!-- Profile & Info -->
+        <div class="col-lg-7">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-dark text-white">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center text-white fw-bold"
+                                 style="width:52px;height:52px;">
+                                @initials.ToUpper()
+                            </div>
+                            <div>
+                                <div class="h5 mb-0">@(!string.IsNullOrWhiteSpace(fullName) ? fullName : Model.UserName)</div>
+                                <small class="text-white-50">@Model.UserName</small>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge rounded-pill @activeBadge">
+                                @(Model.IsActive ? "Active" : "Inactive")
+                            </span>
+                            <span class="badge rounded-pill @emailBadge">
+                                @(Model.EmailConfirmed ? "Email Confirmed" : "Email Unconfirmed")
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <!-- Contact section -->
+                    <div class="mb-2">
+                        <div class="small text-uppercase text-muted mb-2">Contact</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                <span class="text-muted">
+                                    <i class="bi bi-envelope me-2"></i>Email
+                                </span>
+                                <span class="d-flex align-items-center gap-2">
+                                    <a href="mailto:@Model.Email" class="link-dark text-decoration-none">@Model.Email</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                                            data-bs-toggle="tooltip" data-bs-title="Copy email"
+                                            onclick="navigator.clipboard.writeText('@Model.Email')">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </span>
+                            </li>
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                <span class="text-muted">
+                                    <i class="bi bi-telephone me-2"></i>Phone
+                                </span>
+                                <span>@(string.IsNullOrWhiteSpace(Model.PhoneNumber) ? "-" : Model.PhoneNumber)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Account section -->
+                    <div class="mt-4">
+                        <div class="small text-uppercase text-muted mb-2">Account</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi bi-cake2 me-2"></i>Date of Birth</span>
+                                <span>@(Model.DateOfBirth?.ToString("yyyy-MM-dd") ?? "-")</span>
+                            </li>
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi bi-box-arrow-in-right me-2"></i>Last Login</span>
+                                <span>@(Model.LastLogin?.ToString("yyyy-MM-dd HH:mm") ?? "Never")</span>
+                            </li>
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi bi-calendar2-plus me-2"></i>Created</span>
+                                <span>@(Model.CreatedOn?.ToString("yyyy-MM-dd HH:mm") ?? "-")</span>
+                            </li>
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                <span class="text-muted"><i class="bi bi-calendar2-check me-2"></i>Modified</span>
+                                <span>@(Model.ModifiedOn?.ToString("yyyy-MM-dd HH:mm") ?? "-")</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roles -->
+        <div class="col-lg-5">
+            <div class="card border-0 shadow h-100">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Roles & Permissions</span>
+                    <a asp-action="ManageRoles" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">
+                        <i class="bi bi-people me-1"></i> Manage
+                    </a>
+                </div>
+                <div class="card-body">
+                    @if (Model.Roles == null || Model.Roles.Count == 0)
+                    {
+                        <div class="text-center text-muted py-3">
+                            <i class="bi bi-shield-lock mb-2" style="font-size:1.4rem;"></i>
+                            <div>No roles assigned</div>
+                            <div class="mt-2">
+                                <a asp-action="ManageRoles" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-primary">Assign Roles</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var role in Model.Roles.OrderBy(x => x))
+                            {
+                                <span class="badge rounded-pill bg-primary">
+                                    <i class="bi bi-shield-check me-1"></i>@role
+                                </span>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    </script>
+}

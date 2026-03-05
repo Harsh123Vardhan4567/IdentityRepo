@@ -138,7 +138,6 @@ D:\Demo\IdentityDemo\obj\Debug\net8.0\refint\IdentityDemo.dll
 D:\Demo\IdentityDemo\obj\Debug\net8.0\IdentityDemo.pdb
 D:\Demo\IdentityDemo\obj\Debug\net8.0\IdentityDemo.genruntimeconfig.cache
 D:\Demo\IdentityDemo\obj\Debug\net8.0\ref\IdentityDemo.dll
-D:\Demo\IdentityDemo\obj\Debug\net8.0\IdentityDemo.sourcelink.json
 D:\Demo\IdentityDemo\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 D:\Demo\IdentityDemo\bin\Debug\net8.0\MailKit.dll
 D:\Demo\IdentityDemo\bin\Debug\net8.0\MimeKit.dll

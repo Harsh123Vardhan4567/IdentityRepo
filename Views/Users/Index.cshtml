@@ -1,0 +1,156 @@
+﻿@using IdentityDemo.ViewModel
+@using IdentityDemo.ViewModel.Users
+@model PageResult<UserListItemViewModel>
+
+@{
+    ViewData["Title"] = "Users";
+    var filter = (UserListFilterViewModel)ViewBag.Filter;
+}
+
+<div class="container mt-1">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4 pb-2 border-bottom">
+        <div>
+            <h1 class="h3 mb-1 fw-bold text-primary">Users Administration</h1>
+            <p class="text-muted mb-0">Search, filter, and manage application users.</p>
+        </div>
+        <div>
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-lg me-1"></i> Add New User
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["Success"] is string sMsg)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>@sMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] is string eMsg)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>@eMsg
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Filter Bar -->
+    <form method="get" class="row g-2 align-items-end mb-3">
+        <div class="col-md-4">
+            <label class="form-label">Search</label>
+            <input name="Search" value="@filter.Search" class="form-control"
+                   placeholder="Search name, email, phone, username" />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Status</label>
+            <select name="IsActive" class="form-select">
+                <option value="">All Status</option>
+                <option value="true" selected="@(filter.IsActive == true)">Active</option>
+                <option value="false" selected="@(filter.IsActive == false)">Inactive</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Email</label>
+            <select name="EmailConfirmed" class="form-select">
+                <option value="">All Emails</option>
+                <option value="true" selected="@(filter.EmailConfirmed == true)">Confirmed</option>
+                <option value="false" selected="@(filter.EmailConfirmed == false)">Unconfirmed</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Page Size</label>
+            <select name="PageSize" class="form-select">
+                @foreach (var size in new[] { 5, 10, 20, 50 })
+                {
+                    <option value="@size" selected="@(filter.PageSize == size)">@size / page</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2 d-grid d-sm-flex gap-2">
+            <button class="btn btn-primary" type="submit">
+                <i class="bi bi-funnel me-1"></i> Apply
+            </button>
+            <!-- Clear = go to Index without query string -->
+            <a asp-action="Index" class="btn btn-info">
+                <i class="bi bi-x-circle me-1"></i> Clear
+            </a>
+        </div>
+    </form>
+
+    <div class="card shadow border-0 rounded">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <!-- Black/Dark header -->
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th>Email Status</th>
+                            <th>Created</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!Model.Items.Any())
+                        {
+                            <tr>
+                                <td colspan="7" class="text-center text-muted py-4">No users found.</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var u in Model.Items)
+                            {
+                                <tr>
+                                    <td>@($"{u.FirstName} {u.LastName}".Trim())</td>
+                                    <td>@u.Email</td>
+                                    <td>@u.PhoneNumber</td>
+
+                                    <!-- Active / Inactive with colors -->
+                                    <td>
+                                        @if (u.IsActive)
+                                        {
+                                            <span class="badge rounded-pill bg-success">Active</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge rounded-pill bg-danger">Inactive</span>
+                                        }
+                                    </td>
+
+                                    <!-- Email Confirmed / Unconfirmed with colors -->
+                                    <td>
+                                        @if (u.EmailConfirmed)
+                                        {
+                                            <span class="badge rounded-pill bg-success">Confirmed</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge rounded-pill bg-warning text-dark">Unconfirmed</span>
+                                        }
+                                    </td>
+
+                                    <td>@u.CreatedOn?.ToString("yyyy-MM-dd")</td>
+
+                                    <td class="text-end">
+                                        <a asp-action="Details" asp-route-id="@u.Id" class="btn btn-sm btn-outline-info">Details</a>
+                                        <a asp-action="Edit" asp-route-id="@u.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                        <a asp-action="ManageRoles" asp-route-id="@u.Id" class="btn btn-sm btn-outline-dark">Manage Roles</a>
+                                        <a asp-action="Delete" asp-route-id="@u.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <partial name="~/Views/Shared/_Pager.cshtml"
+             model="new PageResult<object> { Items = Array.Empty<object>(), TotalCount = Model.TotalCount, PageNumber = Model.PageNumber, PageSize = Model.PageSize }" />
+</div>
