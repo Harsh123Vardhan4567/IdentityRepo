@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Demo\\IdentityDemo\\IdentityDemo.csproj": {}
+    "D:\\Demo\\Identity\\IdentityRepo\\IdentityDemo.csproj": {}
   },
   "projects": {
-    "D:\\Demo\\IdentityDemo\\IdentityDemo.csproj": {
+    "D:\\Demo\\Identity\\IdentityRepo\\IdentityDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Demo\\IdentityDemo\\IdentityDemo.csproj",
+        "projectUniqueName": "D:\\Demo\\Identity\\IdentityRepo\\IdentityDemo.csproj",
         "projectName": "IdentityDemo",
-        "projectPath": "D:\\Demo\\IdentityDemo\\IdentityDemo.csproj",
+        "projectPath": "D:\\Demo\\Identity\\IdentityRepo\\IdentityDemo.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Demo\\IdentityDemo\\obj\\",
+        "outputPath": "D:\\Demo\\Identity\\IdentityRepo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -54,6 +54,10 @@
             "MailKit": {
               "target": "Package",
               "version": "[4.15.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",

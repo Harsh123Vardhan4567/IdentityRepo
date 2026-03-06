@@ -15,6 +15,14 @@ builder.Services.Configure<EmailSettings>(
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerIdentityConnection")));
+// External Authentication - Google
+builder.Services.AddAuthentication()
+    .AddGoogle(options =>
+    {
+        // Load credentials from appsettings.json
+        options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+        options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+    });
 
 
 // Register ASP.NET Core Identity Services

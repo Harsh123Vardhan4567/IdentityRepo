@@ -1,5 +1,6 @@
 ﻿
 using IdentityDemo.ViewModel;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
 namespace IdentityDemo.Services
@@ -14,5 +15,11 @@ namespace IdentityDemo.Services
         Task<ProfileViewModel> GetUserProfileByEmailAsync(string email);
         Task<bool> SendPasswordResetLinkAsync(string email);
         Task<IdentityResult> ResetPasswordAsync(ResetPasswordViewModel model);
+
+        //New Methods for External Login
+        AuthenticationProperties ConfigureExternalLogin(string provider, string? redirectUrl);
+        Task<ExternalLoginInfo?> GetExternalLoginInfoAsync();
+        Task<SignInResult> ExternalLoginSignInAsync(string loginProvider, string providerKey, bool isPersistent);
+        Task<IdentityResult> CreateExternalUserAsync(ExternalLoginInfo info);
     }
 }

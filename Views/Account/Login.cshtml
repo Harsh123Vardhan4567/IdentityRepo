@@ -75,7 +75,8 @@
                 <h5 class="mb-3 fw-bold text-primary text-center">Quick sign-in</h5>
                 <div class="mb-3 text-center text-muted small">Use your social account for instant access:</div>
                 <div class="d-grid gap-3 mb-3">
-                    <a href="#" class="btn btn-outline-primary d-flex align-items-center justify-content-center fw-semibold">
+                    <a asp-controller="Account" asp-action="ExternalLogin" asp-route-provider="Google" asp-route-returnUrl="@Model.ReturnURL"
+                       class="btn btn-outline-primary d-flex align-items-center justify-content-center fw-semibold">
                         <img src="https://img.icons8.com/color/32/000000/google-logo.png" class="me-2" style="width:24px" alt="Google" />
                         Google
                     </a>

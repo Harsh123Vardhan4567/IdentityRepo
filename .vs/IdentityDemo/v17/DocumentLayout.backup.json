@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Demo\\IdentityDemo\\",
+  "WorkspaceRootPath": "D:\\Demo\\Identity\\IdentityRepo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identity\\identityrepo\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\users\\manageroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\users\\manageroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\controllers\\users controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identity\\identityrepo\\controllers\\users controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:controllers\\users controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\shared\\_pager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identity\\identityrepo\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identity\\identityrepo\\views\\users\\manageroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\users\\manageroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identity\\identityrepo\\views\\shared\\_pager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\shared\\_pager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identitydemo\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|d:\\demo\\identity\\identityrepo\\views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2D366AFB-400E-4F60-B7F9-4E23833F839C}|IdentityDemo.csproj|solutionrelative:views\\users\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -94,37 +94,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Users Controller.cs",
-              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Controllers\\Users Controller.cs",
+              "DocumentMoniker": "D:\\Demo\\Identity\\IdentityRepo\\Controllers\\Users Controller.cs",
               "RelativeDocumentMoniker": "Controllers\\Users Controller.cs",
-              "ToolTip": "D:\\Demo\\IdentityDemo\\Controllers\\Users Controller.cs",
+              "ToolTip": "D:\\Demo\\Identity\\IdentityRepo\\Controllers\\Users Controller.cs",
               "RelativeToolTip": "Controllers\\Users Controller.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwJsAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAewLEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T06:39:52.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T06:39:52.931Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AccountService.cs",
-              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Services\\AccountService.cs",
+              "DocumentMoniker": "D:\\Demo\\Identity\\IdentityRepo\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "Services\\AccountService.cs",
-              "ToolTip": "D:\\Demo\\IdentityDemo\\Services\\AccountService.cs*",
-              "RelativeToolTip": "Services\\AccountService.cs*",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAvwIQAAAAyAAAAAAAAAA==",
+              "ToolTip": "D:\\Demo\\Identity\\IdentityRepo\\Services\\AccountService.cs",
+              "RelativeToolTip": "Services\\AccountService.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAvwJQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T06:12:56.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T06:12:56.952Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "_Pager.cshtml",
-              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Shared\\_Pager.cshtml",
+              "DocumentMoniker": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Shared\\_Pager.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Pager.cshtml",
-              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Shared\\_Pager.cshtml",
+              "ToolTip": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Shared\\_Pager.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Pager.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -132,24 +130,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ManageRoles.cshtml",
-              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Users\\ManageRoles.cshtml",
+              "DocumentMoniker": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Users\\ManageRoles.cshtml",
               "RelativeDocumentMoniker": "Views\\Users\\ManageRoles.cshtml",
-              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Users\\ManageRoles.cshtml",
+              "ToolTip": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Users\\ManageRoles.cshtml",
               "RelativeToolTip": "Views\\Users\\ManageRoles.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-05T05:13:24.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T05:13:24.379Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Users\\Delete.cshtml",
+              "DocumentMoniker": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Users\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Users\\Delete.cshtml",
-              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Users\\Delete.cshtml",
+              "ToolTip": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Users\\Delete.cshtml",
               "RelativeToolTip": "Views\\Users\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -159,11 +156,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Demo\\IdentityDemo\\Views\\Users\\Details.cshtml",
+              "DocumentMoniker": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Users\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Users\\Details.cshtml",
-              "ToolTip": "D:\\Demo\\IdentityDemo\\Views\\Users\\Details.cshtml",
+              "ToolTip": "D:\\Demo\\Identity\\IdentityRepo\\Views\\Users\\Details.cshtml",
               "RelativeToolTip": "Views\\Users\\Details.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAABBwCkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-05T05:11:40.747Z",
               "EditorCaption": ""
